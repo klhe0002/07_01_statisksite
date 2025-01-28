@@ -36,11 +36,22 @@ img {
 
 .product_list_container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+  padding: 5rem;
+}
+
+@media (min-width: 750px) {
+  .product_list_container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
 }
 
 .produkt {
+  display: grid;
+  grid-row: span 4;
   grid-template-rows: subgrid;
 }
 
@@ -57,7 +68,7 @@ img {
 }
 
 .discount {
-  position: relative;
   background-color: red;
   color: black;
+  width: 15%;
 }
