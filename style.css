@@ -9,11 +9,26 @@ img {
   width: 100%;
   height: auto;
   display: block;
-  align-self: stretch;
-  object-fit: cover;
-  padding-bottom: 7vw;
 }
 
+p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
 .category_list_container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -37,7 +52,7 @@ img {
 .product_list_container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 2rem;
   padding: 5rem;
 }
 
@@ -71,4 +86,44 @@ img {
   background-color: red;
   color: black;
   width: 15%;
+  margin-left: auto;
 }
+
+.grey_box {
+  background-color: rgb(207, 207, 207);
+  color: white;
+  border-radius: 20px;
+  padding-inline: 30px;
+}
+
+.produkt_information {
+  padding: 10rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.tekst_stykke {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.basket_knap {
+  padding: 8px;
+  padding-inline: 100px;
+  background-color: blue;
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  position: relative;
+  top: 10%;
+}
+
+.produkt_information_child {
+  display: grid;
+  grid-row: span 3;
+}
+
+test
