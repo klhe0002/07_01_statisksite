@@ -1,7 +1,7 @@
-let productId = 1163;
+let productId = 1163; /*skriver product ideet som en værdi*/
 let productContainer = document.querySelector(".productContainer");
 
-fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
+fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`) /* laver en fetch(asynkron metode) og linker til API(json data)*/
   .then((response) => response.json())
   .then((data) => {
     productContainer.innerHTML = ` <div class="produkt_information">
