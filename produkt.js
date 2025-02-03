@@ -5,7 +5,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`) /* laver en fetch(a
   .then((response) => response.json())
   .then((data) => {
     productContainer.innerHTML = ` <div class="produkt_information">
-            <img src="img/${productId}.webp" alt="" class="produkt_billede">
+            <img src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" alt="" class="produkt_billede">
 
             <div class="produkt_information_child">
                 <h2>Product Infomation</h2>
@@ -18,8 +18,6 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`) /* laver en fetch(a
                     <h3>Inventory Number</h3>
                     <p>${data.id}</p>
                 </div>
-
-
                 <div class="tekst_stykke">
                     <h2>Brand</h2>
                     <p>${data.brandbio}</p>
@@ -31,8 +29,6 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`) /* laver en fetch(a
                 <div class="tekst_stykke">
                     <h2>${data.productdisplayname}</h2>
                 </div>
-
-
                 <div class="tekst_stykke">
                     <p>${data.brandbio}</p>
                     <p>Choose a Size</p>
@@ -46,8 +42,6 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`) /* laver en fetch(a
                     <option value="xl">XL</option>
                     <option value="xxl">XXL</option>
                 </select>
-
-
                 <a href="" class="basket_knap">Add to basket</a>
 
             </div>
