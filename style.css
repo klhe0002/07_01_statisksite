@@ -67,7 +67,7 @@ h3 {
 .produkt {
   display: grid;
   grid-row: span 4;
-  grid-template-rows: subgrid;
+  /* grid-template-rows: subgrid; */
 }
 
 .sold_out {

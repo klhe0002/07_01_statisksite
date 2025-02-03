@@ -1,15 +1,14 @@
 const listContainer = document.querySelector(".category_list_container");
 
-fetch(`https://kea-alt-del.dk/t7/api/products/`) /* laver en fetch(asynkron metode) og linker til API(json data)*/
+fetch(`https://kea-alt-del.dk/t7/api/products?limit=100`) /* laver en fetch(asynkron metode) og linker til API(json data)*/
   .then((response) => response.json())
   .then((data) => showList(data));
 
 function showList(products) {
-  console.log(products);
-  let markup = "";
-  products
-    .map((product) => {
-      markup += `<div class="produkt">
+  const markup = products
+    .map(
+      (product) =>
+        `<div class="produkt">
                 <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="">
                  
                 <div>
@@ -24,8 +23,11 @@ function showList(products) {
                     <p>Now DKK 1560</p>
                     <div class="discount">${product.discount}</div>
                 </div>
+
+                   <a href="produkt.html">Read More</a>
                 
                  <!-- Hvis produktet er udsolgt, tilføj "Sold Out"-boks -->
+
           ${
             product.soldout === 1
               ? `
@@ -34,9 +36,9 @@ function showList(products) {
           </div>`
               : ""
           }
-       
-            </div>`;
-    })
+
+    </div>`
+    )
     .join("");
   console.log(markup);
   listContainer.innerHTML = markup;
