@@ -1,11 +1,18 @@
-const listContainer = document.querySelector(".category_list_container");
+const mycategory = new URLSearchParams(window.location.search).get("category");
 
-fetch(`https://kea-alt-del.dk/t7/api/products?limit=100`) /* laver en fetch(asynkron metode) og linker til API(json data)*/
+const productContainer = document.querySelector(".category_list_container");
+
+// overskrift.innerHTML = mycategory;
+
+const overskrift = document.querySelector("h1");
+overskrift.innerHTML = mycategory;
+
+fetch(`https://kea-alt-del.dk/t7/api/products?category=${mycategory}`) /* laver en fetch(asynkron metode) og linker til API(json data)*/
   .then((response) => response.json())
   .then((data) => showList(data));
 
-function showList(products) {
-  const markup = products
+function showList(data) {
+  const markup = data
     .map(
       (product) =>
         `<div class="produkt">
@@ -40,6 +47,5 @@ function showList(products) {
     </div>`
     )
     .join("");
-  console.log(markup);
-  listContainer.innerHTML = markup;
+  productContainer.innerHTML = markup;
 }
