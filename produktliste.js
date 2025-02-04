@@ -1,6 +1,6 @@
 const mycategory = new URLSearchParams(window.location.search).get("category");
 
-const productContainer = document.querySelector(".category_list_container");
+const productContainer = document.querySelector(".product_list_container");
 
 // overskrift.innerHTML = mycategory;
 
