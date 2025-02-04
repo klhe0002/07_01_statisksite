@@ -62,6 +62,12 @@ h3 {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
   }
+
+  .product_list_container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
 }
 
 .produkt {
