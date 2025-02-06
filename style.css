@@ -11,24 +11,170 @@ img {
   display: block;
 }
 
+main {
+  background-color: black;
+}
+
+header {
+  background-color: black;
+}
+
+footer{
+  background-color: black;
+}
+
 p {
   font-family: Arial, Helvetica, sans-serif;
+  color: white;
 }
 
 h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
+  color: white;
 }
 
 h2 {
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
+  font-weight: 500;
+  color: white;
+  padding-top: 10px;
 }
 
 h3 {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
+  color: white;
 }
+
+  header {
+    padding-bottom: 10vw !important;
+  }
+}
+
+/******** menu ********/
+nav a.active {
+  color: #ffffff;
+  /* font-weight: bold; */
+  border-bottom: 2px solid #ee22cc;
+  border-radius: 2px;
+  border-width: 1px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: "Roboto", serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 2rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin-right: 75px;
+}
+
+.menu a {
+  padding: 10px;
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.3s;
+  text-align: center;
+  color: #ffffff;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu a:hover {
+  color: red;
+}
+
+.burger {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.burger .line {
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  margin-bottom: 5px;
+  transition: 0.2s linear;
+}
+.burger {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .menu {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    transition: 0.2s linear;
+  }
+
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+    transition: 0.15s linear;
+  }
+
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    transition: 0.2s linear;
+  }
+
+  nav.active .menu {
+    display: block;
+    background-color: #000000;
+    position: absolute;
+    top: 94px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+
+  nav.active .menu li {
+    margin: 10px 20px;
+    text-align: center;
+  }
+
+  nav.active .menu a {
+    font-size: 80px;
+  }
+
+  .menu a {
+    color: #ffffff;
+    height: 100svh;
+  }
+  .menu a:hover {
+    color: #000000;
+  }
+}
+
 .category_list_container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -43,10 +189,24 @@ h3 {
   align-items: center;
 }
 
+.product_list_container {
+  padding: 5vw;
+}
+
+.product_list_container a {
+  text-decoration: none;
+  color: black;
+}
+
 .produkter {
   background-color: blue;
   padding: 4rem;
   border-radius: 20px;
+}
+
+.produkter:hover a {
+  opacity: 50%;
+  transform: translateY(-5px);
 }
 
 .category_list_container {
@@ -64,10 +224,11 @@ h3 {
   }
 
   .product_list_container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-}
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    gap: 60px;
+  }
 }
 
 .produkt {
@@ -76,12 +237,8 @@ h3 {
   /* grid-template-rows: subgrid; */
 }
 
-.sold_out {
-  opacity: 30%;
-}
-
 .sold_out_box {
-  position: absolute;
+  /* position: absolute; */
 
   background-color: gray;
   color: black;
@@ -89,10 +246,28 @@ h3 {
 }
 
 .discount {
+  position: absolute;
+  top: 20px;
+  left: 0px;
   background-color: red;
-  color: black;
-  width: 15%;
-  margin-left: auto;
+  padding: 5px 8px;
+}
+
+.logo{
+  width: 40%;
+}
+
+.product_discount {
+  position: absolute;
+  top: 17px;
+  left: 309px;
+  background-color: red;
+  padding: 5px 8px;
+}
+
+.img_container {
+  position: relative;
+  display: inline-block;
 }
 
 .grey_box {
@@ -100,6 +275,7 @@ h3 {
   color: white;
   border-radius: 20px;
   padding-inline: 30px;
+  position: relative;
 }
 
 .produkt_information {
@@ -130,7 +306,21 @@ h3 {
 .produkt_information_child {
   display: grid;
   grid-row: span 3;
-   position: relative;
+  position: relative;
 }
 
-test
+.salelabel {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: red;
+  padding: 5px 8px;
+}
+
+.isOnSale {
+  visibility: visible;
+}
+
+.hide {
+  display: none;
+}
